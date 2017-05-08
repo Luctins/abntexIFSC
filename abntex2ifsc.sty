@@ -24,76 +24,78 @@
 % INICIO DAS CUSTOMIZACOES PARA O00 IFSC
 % ---
 
-\ProvidesPackage{abntex2ifsc}[2017/05/01 Criacao desta customizacao do abnTeX2]
+\ProvidesPackage{abntex2ifsc}[2017/05/01 : Criacao desta customizacao do abnTeX2]
 
-% alterando a capa
+% ----
+% Capa
 \renewcommand{\imprimircapa}{%
   \begin{capa}%
     \begin{center}
-    \ABNTEXchapterfont\Large \imprimirinstituicao \\
-    \end{center}
+	\textbf{\ABNTEXchapterfont\SingleSpacing\large\MakeUppercase\imprimirinstituicao}
     
     \vspace*{1cm}
 
     \vfill
-    \begin{center}
-    \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
-    \end{center}
+    
+    \textbf{\ABNTEXchapterfont\Large\MakeUppercase\imprimirtitulo}
+    %{\ABNTEXchapterfont\bfseries\Large \imprimirtitulo}}}
+    
     \vfill
     
-    {\ABNTEXchapterfont\large\imprimirautor}
+    \textbf{\ABNTEXchapterfont\large\MakeUppercase\imprimirautor}
+    %{\ABNTEXchapterfont\large \imprimirautor}
     
-    \large\imprimirlocal
-
-    \large\imprimirdata
+    \vfill
+    
+	\textbf{\ABNTEXchapterfont\large\MakeUppercase\imprimirlocal,~\MakeUppercase\imprimirdata.}
+   	%\large{\MakeUppercase{\imprimirlocal}} , \large{\MakeUppercase{\imprimirdata}}.
     
     \vspace*{1cm}
+    
+    \end{center}
   \end{capa}
 }
 
-
+% -------------
 % folha de rosto 
 
 \makeatletter
 
 \renewcommand{\folhaderostocontent}{
 	\begin{center}
-	{\ABNTEXchapterfont\Large \imprimirinstituicao}
+	\textbf{\ABNTEXchapterfont\SingleSpacing\large\MakeUppercase\imprimirinstituicao}
     
     \vspace*{1cm}
 
-	\vspace*{\fill}\vspace*{\fill}
+	\vspace*{\fill}
 	
-	\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+	\textbf{\ABNTEXchapterfont\Large\MakeUppercase\imprimirtitulo}
 	
 	\vspace*{\fill}    
     
-	{\ABNTEXchapterfont\large\imprimirautor}
+	\textbf{\ABNTEXchapterfont\large\MakeUppercase\imprimirautor}
+	
+	\vspace*{3cm}
 
 	\abntex@ifnotempty{\imprimirpreambulo}{%
   	\hspace{.45\textwidth}
   	\begin{minipage}{.5\textwidth}
   	\SingleSpacing
+  	\large
   	\imprimirpreambulo
+  	\par
+  	\large\imprimirorientadorRotulo~\imprimirorientador
+  	\par
+  	\large\imprimircoorientadorRotulo~\imprimircoorientador
   	\end{minipage}%
+  	}
+  	
   	\vspace*{\fill}
-	}%
 
-	{\large\imprimirorientadorRotulo~\imprimirorientador\par}
 
-	\abntex@ifnotempty{\imprimircoorientador}{%
-  	{\large\imprimircoorientadorRotulo~\imprimircoorientador}%
-	}%
 
-	\vspace*{\fill}
-
-	{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao				\vspace*{\fill}}}
-
-	{\large\imprimirlocal}
-
-	\par
-
-	{\large\imprimirdata}
+	{\ABNTEXchapterfont\large\bfseries\MakeUppercase\imprimirlocal,~\MakeUppercase\imprimirdata.}
+	
 	\vspace*{1cm}
 	\end{center}
 }
