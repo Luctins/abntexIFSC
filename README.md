@@ -1,2 +1,2 @@
 # abntexIFSC
-customizacôes para o pacote LaTex: ABNTex estar em conformidade com o modelo do IFSC - Instituto Federal de Santa Catarina
+customizações para o pacote LaTex: ABNTex estar em conformidade com o modelo do IFSC - Instituto Federal de Santa Catarina
